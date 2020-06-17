@@ -1,4 +1,4 @@
-module Pages.Docs exposing (Flags, Model, Msg, page)
+module Pages.Docs2 exposing (Flags, Model, Msg, page)
 
 import Html
 import Page exposing (Document, Page)
@@ -25,6 +25,11 @@ page =
 
 view : Document Msg
 view =
-    { title = "Docs"
-    , body = [ Html.text "Docs" ]
+    { title = "Docs2"
+    , body =
+        let
+            _ =
+                Debug.log "xxx Docs2" ()
+        in
+        [ Html.text "Docs2" ]
     }

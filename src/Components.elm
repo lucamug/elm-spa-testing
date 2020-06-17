@@ -10,9 +10,14 @@ layout : { page : Document msg } -> Document msg
 layout { page } =
     { title = page.title
     , body =
-        [ div [ class "column spacing--large pad--medium container h--fill" ]
+        [ div [ style "margin" "50px", style "font-family" "sans-serif" ]
             [ navbar
-            , div [ class "column", style "flex" "1 0 auto" ] page.body
+            , div
+                [ style "padding" "50px"
+                , style "margin" "20px 0"
+                , style "border" "1px solid #ddd"
+                ]
+                page.body
             , footer
             ]
         ]
@@ -21,12 +26,13 @@ layout { page } =
 
 navbar : Html msg
 navbar =
-    header [ class "row center-y spacing--between" ]
-        [ a [ class "link font--h5", href (Route.toHref Route.Top) ] [ text "home" ]
-        , div [ class "row center-y spacing--medium" ]
-            [ a [ class "link", href (Route.toHref Route.Docs) ] [ text "docs" ]
-            , a [ class "link", href (Route.toHref Route.NotFound) ] [ text "a broken link" ]
-            , a [ class "button", href "https://twitter.com/intent/tweet?text=elm-spa is ez pz" ] [ text "tweet about it" ]
+    header []
+        [ a [ href (Route.toHref Route.Top) ] [ text "home" ]
+        , ul []
+            [ li [] [ a [ href (Route.toHref Route.Docs1) ] [ text "Docs1" ] ]
+            , li [] [ a [ href (Route.toHref Route.Docs2) ] [ text "Docs2" ] ]
+            , li [] [ a [ href (Route.toHref Route.Page1) ] [ text "Page1" ] ]
+            , li [] [ a [ href (Route.toHref Route.Page2) ] [ text "Page2" ] ]
             ]
         ]
 
