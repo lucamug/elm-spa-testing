@@ -29,7 +29,7 @@ view =
     , body =
         let
             _ =
-                Debug.log "xxx Docs2" ()
+                Debug.log "view Docs2" ()
         in
         [ Html.text "Docs2" ]
     }

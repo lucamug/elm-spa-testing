@@ -50,7 +50,7 @@ view global model =
     , body =
         [ let
             _ =
-                Debug.log "xxx Page1" ()
+                Debug.log "view Page1" ()
           in
           Html.text "Page1"
         ]
