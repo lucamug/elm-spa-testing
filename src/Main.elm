@@ -64,6 +64,10 @@ type Msg
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
+    let
+        _ =
+            Debug.log "UPDATE" msg
+    in
     case msg of
         LinkClicked (Browser.Internal url) ->
             ( model, Browser.Navigation.pushUrl model.key (Url.toString url) )
@@ -107,27 +111,29 @@ update msg model =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Sub.batch
-        [ model.global
-            |> Global.subscriptions
-            |> Sub.map Global
-        , model.page
-            |> (\page ->
-                    let
-                        _ =
-                            Debug.log "Main.subscriptions page" page
-                    in
-                    Generated.Pages.subscriptions page model.global
-               )
-            |> Sub.map Page
-        ]
+    let
+        _ =
+            Debug.log "SUBSCRIPTIONS" ()
+    in
+    Sub.none
+
+
+
+-- Sub.batch
+--     [ model.global
+--         |> Global.subscriptions
+--         |> Sub.map Global
+--     , model.page
+--         |> (\page -> Generated.Pages.subscriptions page model.global)
+--         |> Sub.map Page
+--     ]
 
 
 view : Model -> Browser.Document Msg
 view model =
     let
         _ =
-            Debug.log "Main.view" ()
+            Debug.log "VIEW" ()
 
         documentMap :
             (msg1 -> msg2)

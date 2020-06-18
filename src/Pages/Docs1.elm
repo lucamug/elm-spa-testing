@@ -27,9 +27,9 @@ view : Document Msg
 view =
     { title = "Docs1"
     , body =
-        let
-            _ =
-                Debug.log "view Docs1" ()
-        in
+        -- let
+        --     _ =
+        --         Debug.log "view Docs1" ()
+        -- in
         [ Html.text "Docs1" ]
     }

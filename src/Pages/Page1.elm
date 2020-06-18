@@ -48,10 +48,10 @@ view : Global.Model -> Model -> Document Msg
 view global model =
     { title = "Page1"
     , body =
-        [ let
-            _ =
-                Debug.log "view Page1" ()
-          in
+        [ -- let
+          -- _ =
+          --     Debug.log "view Page1" ()
+          -- in
           Html.text "Page1"
         ]
     }
