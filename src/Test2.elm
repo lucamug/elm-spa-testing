@@ -32,7 +32,7 @@ update : Msg -> Model -> ( Model, Cmd msg )
 update msg model =
     let
         _ =
-            Debug.log "UPDATE" msg
+            Debug.log "" <| "* UPDATE (" ++ String.left 11 (Debug.toString msg) ++ ")"
     in
     case msg of
         LinkClicked urlRequest ->
@@ -62,7 +62,7 @@ view : { a | count : Int } -> { body : List (Html Msg), title : String }
 view model =
     let
         _ =
-            Debug.log "VIEW" ()
+            Debug.log "" "* VIEW"
     in
     { title = "Title"
     , body =
@@ -77,7 +77,7 @@ subscriptions : a -> Sub msg
 subscriptions model =
     let
         _ =
-            Debug.log "SUBSCRIPTIONS" ()
+            Debug.log "" "* SUBSCRIPTIONS"
     in
     Sub.none
 
